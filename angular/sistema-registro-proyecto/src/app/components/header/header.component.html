@@ -1,0 +1,22 @@
+<!-- Archivo html para el manejo de el crud -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isAuthenticated()">
+  <a class="navbar-brand" [routerLink]="['/home']" >Sistema Registro Personas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      
+      <!-- [routerLink] = ruta que asignamos a cada uno de los navbar utilizados por el boostrap -->
+      <a class="nav-link active" [routerLink]="['/home']" ruoterLinkActive="active">Home</a>
+      <a class="nav-link" [routerLink]="['/listar']" ruoterLinkActive="active">Listar Personas</a>
+      <li><a class="nav-link" [routerLink]="['/crear']" routerLinkActive="active">Registar Personas</a></li>
+    </div>
+  </div>
+  <ul class="navbar-nav navbar-right">
+    <li>
+      <!-- boton de cierre de sesion -->
+      <a class="btn btn-outline-primary" (click)="logout()">Salir</a>
+    </li>
+  </ul>
+</nav>

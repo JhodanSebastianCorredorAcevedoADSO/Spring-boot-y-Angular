@@ -1,0 +1,10 @@
+INSERT INTO tipodocumento (idtipodocumento, nombredocumento) VALUES  (1,'Cedula')
+INSERT INTO tipodocumento (idtipodocumento, nombredocumento) VALUES  (2,'Tarjeta Identidad')
+INSERT INTO tipodocumento (idtipodocumento, nombredocumento) VALUES  (3,'Cedula Extranjeria')
+
+INSERT INTO usuario (id_usuario, nombre_usuario, password, enabled) values (1, 'jhodan', '$2a$10$LXvl9cEhPNTO9pX9ApvPG.sPlrm0LuvxHDLmmw8gMFE6BZiwGCwhO', true)
+INSERT INTO usuario (id_usuario, nombre_usuario, password, enabled) values (2, 'sebastian', '$2a$10$NBwSw3Ugr8q5Ek.chgn.3.GN5DEOS4cg5OMjUsRe6BUbNXRO5y70C', true)
+INSERT INTO roles (id_rol, nombre_rol) values (1, 'ROLE_ADMIN')
+INSERT INTO roles (id_rol, nombre_rol) values (2, 'ROLE_CONSULTA')
+INSERT INTO users_authorities (id_usuario, id_rol) values (1, 1)
+INSERT INTO users_authorities (id_usuario, id_rol) values (2, 2)

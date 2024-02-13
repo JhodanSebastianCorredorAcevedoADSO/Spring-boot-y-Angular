@@ -1,0 +1,67 @@
+<!-- Frm para el registron de nuevas personas -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2>
+                    {{titulo}}
+                </h2>
+                <p>
+                    Aqui podra observar el listado de personas existente
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+
+        <!-- frm para la verificacion de todos los campos si son correctos y su envio -->
+        <form (ngSubmit)="registrar()" #personaForm="ngForm">
+            <div class="form-row">
+                <div class="form-group col-md-2"></div>
+                <div class="form-group col-md-4">
+                    <label>Tipo documento</label>
+                    <select class="form-control" name="tipoDocIdentidad" id="tipoDocIdentidad" [(ngModel)]="persona.tipoDocumento" required>
+                        <option>--Selecione--</option>
+                        <option *ngFor="let documento of tipoDocumento" [ngValue]="documento" [selected]="documento.idTipoDocumento === persona.tipoDocumento.idTipoDocumento" >{{documento.nombreDocumento}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Numero documento</label>
+                    <input class="form-control" type="text" id="numeroDocumento" name="numeroDocumento" [(ngModel)]="persona.numeroDocumento" placeholder="Digite el documento" minlength="3" maxlength="10" #numeroDocumento="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="numeroDocumento.invalid && (numeroDocumento.dirty || numeroDocumento.touched)">
+                         <div *ngIf="numeroDocumento.errors?.['required']">El numero de documento es requerido</div>
+                        <div *ngIf="numeroDocumento.errors?.['minlength']">El numero de documento debe de tener minimo 3 caracteres</div>  
+                        <div *ngIf="numeroDocumento.errors?.['maxlength']">El numero de documento debe de tener minimo 3 caracteres</div>  
+                
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2"></div>
+                <div class="form-group col-md-4">
+                    <label>Nombre</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" [(ngModel)]="persona.nombre" placeholder="Ingrese el nombre" minlength="3" #nombre="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                        <div *ngIf="nombre.errors?.['required']">El nombre de documento es requerido</div> 
+                       <div *ngIf="nombre.errors?.['minlength']">El nombre de documento debe de tener minimo 3 caracteres</div>  
+                   </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <Label>Apellido</Label>
+                    <input class="form-control" type="text" name="apellido" id="apellido" [(ngModel)]="persona.apellido" placeholder="Ingrese el apellido" minlength="3" #apellido="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                        <div *ngIf="apellido.errors?.['required']">El apelldio de documento es requerido</div> 
+                       <div *ngIf="apellido.errors?.['minlength']">El apellido de documento debe de tener minimo 3 caracteres</div>  
+                   </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8"></div>
+                <div class="form-group col-md-2">
+                    <button type="submit" class="btn btn-outline-success float-right" [disabled]="!personaForm.form.valid">Enviar</button>
+                </div>
+                <div class="form-group col-md-2"></div>
+            </div>
+        </form>
+    </div>
+</div>

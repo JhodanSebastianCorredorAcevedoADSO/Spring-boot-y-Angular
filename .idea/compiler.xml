@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zuul-server" />
+        <module name="microservicio-persona (2)" />
+        <module name="microservicio-persona (1)" />
+        <module name="Proyecto" />
+        <module name="PruebasUnitarias" />
+        <module name="ServidorRegistroEureka" />
+        <module name="microservicio-persona" />
+        <module name="demo" />
+        <module name="ProyectoEjecutable" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Proyecto" options="-parameters" />
+      <module name="ProyectoEjecutable" options="-parameters" />
+      <module name="PruebasUnitarias" options="-parameters" />
+      <module name="ServidorRegistroEureka" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="microservicio-persona" options="-parameters" />
+      <module name="microservicio-persona (1)" options="-parameters" />
+      <module name="microservicio-persona (2)" options="-parameters" />
+      <module name="zuul-server" options="-parameters" />
+    </option>
+  </component>
+</project>

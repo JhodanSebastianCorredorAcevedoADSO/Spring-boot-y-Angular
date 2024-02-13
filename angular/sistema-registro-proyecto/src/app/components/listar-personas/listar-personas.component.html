@@ -1,0 +1,40 @@
+<!-- front-end de muestra de las personas enlistadas -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2>
+                    listado de Personas
+                </h2>
+                <p>
+                    Aqui podra encontar el listado de personas existentes
+                </p>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Tipo documento</th>
+                        <th scope="col">Numero documento</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let persona of personas">
+                        <th scope="row">{{persona.tipoDocumento.nombreDocumento}}</th>
+                        <td>{{persona.numeroDocumento}}</td>
+                        <td>{{persona.nombre}}</td>
+                        <td>{{persona.apellido}}</td>
+
+                        <!-- Botones de manejo de la edicion y su direcionamiento o su dirtecta eliminacion -->
+                        <td><button type="button" class="btn btn-outline-primary" (click)="editarPersona(persona)">Editar</button>
+                        <button type="button" class="btn btn-outline-danger m-4"
+                                (click)="eliminar(persona)">Danger</button></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
