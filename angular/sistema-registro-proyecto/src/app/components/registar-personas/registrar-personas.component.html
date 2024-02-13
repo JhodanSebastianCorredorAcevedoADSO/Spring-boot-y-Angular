@@ -22,7 +22,7 @@
                     <label>Tipo documento</label>
                     <select class="form-control" name="tipoDocIdentidad" id="tipoDocIdentidad" [(ngModel)]="persona.tipoDocumento" required>
                         <option>--Selecione--</option>
-                        <option *ngFor="let documento of tipoDocumento" [ngValue]="documento" [selected]="documento.idTipoDocumento === persona.tipoDocumento.idTipoDocumento" >{{documento.nombreDocumento}}</option>
+                        <option *ngFor="let documento of tipoDocumento" [selected]="documento" [ngValue]="documento" > {{documento.nombreDocumento}} </option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
@@ -31,7 +31,7 @@
                     <div class="alert alert-danger" *ngIf="numeroDocumento.invalid && (numeroDocumento.dirty || numeroDocumento.touched)">
                          <div *ngIf="numeroDocumento.errors?.['required']">El numero de documento es requerido</div>
                         <div *ngIf="numeroDocumento.errors?.['minlength']">El numero de documento debe de tener minimo 3 caracteres</div>  
-                        <div *ngIf="numeroDocumento.errors?.['maxlength']">El numero de documento debe de tener minimo 3 caracteres</div>  
+                        <div *ngIf="numeroDocumento.errors?.['maxlength']"></div>  
                 
                     </div>
                 </div>

@@ -13,7 +13,7 @@ export class TipoDocumentoService {
 
   constructor(private http: HttpClient,private serviceUtil: ServiceUtil) { }
 
-  listarTipoDocumento(): Observable<TipoDocumento[]> {
+  listarTipoDocumento( ): Observable<TipoDocumento[]> {
     return this.http.get<TipoDocumento[]>(URL_BASE, {headers: this.serviceUtil.getSimpleHeader()});
   }
 

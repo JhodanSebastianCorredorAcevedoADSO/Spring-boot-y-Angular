@@ -7,9 +7,6 @@ import { ServiceUtil } from '../../util/service-util';
 
 const URL_BASE = 'http://localhost:8082/v1/persona';
 
-// comando de aplication jscon
-// const HEADER_JSON = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
-
 @Injectable({
   providedIn: 'root'
 })
@@ -27,8 +24,8 @@ export class PersonaService {
     return this.http.get<Persona>(`${URL_BASE}/${idPersona}`, {headers: this.serviceUtil.getSimpleHeader()})
   }
 
-  actualizar(ComandoPersona: ComandoPersona): Observable<Persona>{
-    return this.http.put<Persona>(`${URL_BASE}/${ComandoPersona.idPersona}`, ComandoPersona, {headers: this.serviceUtil.getJsonHeader()});
+  actualizar(comandoPersona: ComandoPersona): Observable<Persona>{
+    return this.http.put<Persona>(`${URL_BASE}/${comandoPersona.idPersona}`, comandoPersona, {headers: this.serviceUtil.getJsonHeader()});
   }
 
 
