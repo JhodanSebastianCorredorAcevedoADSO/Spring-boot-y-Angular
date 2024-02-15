@@ -21,8 +21,9 @@
                 <div class="form-group col-md-4">
                     <label>Tipo documento</label>
                     <select class="form-control" name="tipoDocIdentidad" id="tipoDocIdentidad" [(ngModel)]="persona.tipoDocumento" required>
-                        <option>--Selecione--</option>
-                        <option *ngFor="let documento of tipoDocumento" [selected]="documento" [ngValue]="documento" > {{documento.nombreDocumento}} </option>
+                        <!-- <option>--Selecione--</option> -->
+                        <option *ngFor="let documento of tipoDocumento" [ngValue]="documento" selected="{{documento.idTipoDocumento}}">{{documento.nombreDocumento}}</option>
+
                     </select>
                 </div>
                 <div class="form-group col-md-4">
